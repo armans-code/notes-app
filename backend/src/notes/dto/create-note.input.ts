@@ -5,9 +5,6 @@ export class CreateNoteInput {
   @Field()
   userId: string;
 
-  @Field()
-  title: string;
-
   @Field({ nullable: true })
   description: string;
 }

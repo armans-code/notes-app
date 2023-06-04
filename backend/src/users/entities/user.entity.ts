@@ -1,14 +1,6 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Note } from 'src/notes/entities/note.entity';
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  PrimaryColumn,
-  OneToMany,
-  JoinColumn,
-  JoinTable,
-} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @ObjectType()
 @Entity('users')

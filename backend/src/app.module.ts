@@ -14,8 +14,6 @@ import { UsersModule } from './users/users.module';
       password: 'password',
       database: 'postgres',
       autoLoadEntities: true,
-      synchronize: true,
-      dropSchema: true,
       logging: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({

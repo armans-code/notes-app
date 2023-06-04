@@ -14,9 +14,7 @@ export class UsersService {
     private userRepository: Repository<User>,
   ) {
     this.firebaseApp = firebase.initializeApp({
-      credential: firebase.credential.cert(
-        'PATH',
-      ),
+      credential: firebase.credential.cert('PATH_TO_FIREBASE_JSON'),
     });
   }
 

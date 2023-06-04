@@ -1,8 +1,10 @@
-import { Resolver, Query, Mutation, Args, ResolveField, Parent } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { NotesService } from './notes.service';
 import { Note } from './entities/note.entity';
 import { CreateNoteInput } from './dto/create-note.input';
 import { UpdateNoteInput } from './dto/update-note.input';
+import { FindNoteInput } from './dto/find-note.input';
+import { RemoveNoteInput } from './dto/remove-note.input';
 @Resolver(() => Note)
 export class NotesResolver {
   constructor(private readonly notesService: NotesService) {}
@@ -18,8 +20,8 @@ export class NotesResolver {
   }
 
   @Query(() => Note, { name: 'note' })
-  findOne(@Args('id') id: string) {
-    return this.notesService.findOne(id);
+  findOne(@Args('findNoteInput') findNoteInput: FindNoteInput) {
+    return this.notesService.findOne(findNoteInput);
   }
 
   @Mutation(() => Note)
@@ -28,7 +30,7 @@ export class NotesResolver {
   }
 
   @Mutation(() => String)
-  removeNote(@Args('id') id: string) {
-    return this.notesService.remove(id);
+  removeNote(@Args('removeNoteInput') removeNoteInput: RemoveNoteInput) {
+    return this.notesService.remove(removeNoteInput);
   }
 }

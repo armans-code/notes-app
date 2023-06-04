@@ -1,6 +1,13 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { ObjectType, Field } from '@nestjs/graphql';
 import { User } from 'src/users/entities/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @ObjectType()
 @Entity('notes')
@@ -8,10 +15,6 @@ export class Note {
   @PrimaryGeneratedColumn('uuid')
   @Field()
   id: string;
-
-  @Column()
-  @Field()
-  title: string;
 
   @Column({ nullable: true, length: 300 })
   @Field({ nullable: true })
@@ -23,4 +26,12 @@ export class Note {
   @Column()
   @Field()
   userId: string;
+
+  @CreateDateColumn({ type: 'timestamptz' })
+  @Field()
+  createdAt: Date;
+
+  @UpdateDateColumn({ type: 'timestamptz' })
+  @Field()
+  updatedAt: Date;
 }
