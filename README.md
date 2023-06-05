@@ -6,7 +6,7 @@
 ### React
 React offers a component-based architecture and unidirectional data flow. UI elements such as note cards, headers, and pages would be similar for everyone using the app and hence reusable. This allowed for better code organization and easibility with maintaining the UI. Additionally, its unidirectional data flow allowed for a predictable system. For example, notes would first be fetched from the backend, then passed as props to note card components.
 ### Tailwind
-TailwindCSS mdae styling the web app incredibly efficient by eliminating the need for custom css classes and files. This also helped with code organization.
+TailwindCSS made styling the web app incredibly efficient by eliminating the need for custom css classes and files. This also helped with code organization.
 ### Firebase
 Firebase was used to handle user authentication due to its simplicity and security. All passwords were stored on Google's Firebase servers, rather than the app's PostgreSQL database.
 ### GraphQL
