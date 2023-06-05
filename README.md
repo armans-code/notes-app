@@ -30,3 +30,9 @@ PostgreSQL was used as the database due to its reliability. For a simple notes a
 - On the main page, after finding the note you'd like to update, simply hit the "Edit Note" button. This will redirect you to a page where you can edit that note. Similarly to creating a note, the description must be between 20 and 300 characters.
 #### Deleting Notes
 - Similarly to updated notes, after finding the note you'd like to delete, simply hit the "Delete Note" button.
+## Data Flow & Database Design
+![Database Design](docs/dbdiagram.png)
+![Register & Login Annotated](docs/register_login.png)
+![Note Index Annotated](docs/note_index_delete.png)
+![Note Create Annotated](docs/note_create.png)
+![Note Edit Annotated](docs/note_edit.png)
