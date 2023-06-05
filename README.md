@@ -1,4 +1,9 @@
 # Notes App
+## Table of Contents
+- [Introduction](#introduction)
+- [Technology Choices](#technology-choices)
+- [User Guide & Functionality](#user-guide--functionality)
+- [Data Flow & Database Design](#user-guide--functionality)
 ## Introduction
 - This is a simple web application that allows users to index, create, update, and delete notes.
 - To sign up and create notes yourself, you can visit http://164.92.104.129:3000/
