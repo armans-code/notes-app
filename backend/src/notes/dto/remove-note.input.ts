@@ -4,7 +4,4 @@ import { InputType, Field } from '@nestjs/graphql';
 export class RemoveNoteInput {
   @Field()
   id: string;
-
-  @Field()
-  userId: string;
 }

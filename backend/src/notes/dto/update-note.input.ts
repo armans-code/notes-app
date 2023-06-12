@@ -7,8 +7,5 @@ export class UpdateNoteInput extends PartialType(CreateNoteInput) {
   id: string;
 
   @Field()
-  userId: string;
-
-  @Field()
   description: string;
 }

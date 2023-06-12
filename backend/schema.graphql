@@ -21,7 +21,6 @@ scalar DateTime
 
 input FindNoteInput {
   id: String!
-  userId: String!
 }
 
 type Mutation {
@@ -41,20 +40,17 @@ type Note {
 
 type Query {
   note(findNoteInput: FindNoteInput!): Note!
-  notes: [Note!]!
   user(id: String!): User!
-  users: [User!]!
 }
 
 input RemoveNoteInput {
   id: String!
-  userId: String!
 }
 
 input UpdateNoteInput {
   description: String!
   id: String!
-  userId: String!
+  userId: String
 }
 
 type User {

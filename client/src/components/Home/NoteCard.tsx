@@ -15,7 +15,6 @@ function NoteCard({ note }: { note: Note }) {
       variables: {
         removeNoteInput: {
           id: note?.id,
-          userId: account?.id,
         },
       },
       refetchQueries: [GET_USER_NOTES],

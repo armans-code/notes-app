@@ -23,7 +23,6 @@ function EditNote() {
       variables: {
         findNoteInput: {
           id,
-          userId: account?.id,
         },
       },
     })
@@ -42,7 +41,6 @@ function EditNote() {
       variables: {
         updateNoteInput: {
           id,
-          userId: account?.id,
           description,
         },
       },

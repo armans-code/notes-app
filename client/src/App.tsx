@@ -1,5 +1,6 @@
 import './App.css';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -8,12 +9,29 @@ import { AuthProvider } from './auth/AuthContext';
 import Layout from './components/Layout/Layout';
 import CreateNote from './pages/CreateNote';
 import EditNote from './pages/EditNote';
+import { getAuth } from 'firebase/auth';
 
 function App() {
-  const client = new ApolloClient({
+  const { currentUser } = getAuth();
+  const authLink = setContext((_, { headers }) => {
+    return {
+      headers: {
+        ...headers,
+        Authorization: currentUser?.uid?.length ?? `Bearer ${localStorage.getItem('accessToken')}`,
+      },
+    };
+  });
+
+  const httpLink = createHttpLink({
     uri: 'http://localhost:8080/graphql',
+    credentials: 'include',
+  });
+
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
+
   return (
     <ApolloProvider client={client}>
       <AuthProvider>
