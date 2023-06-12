@@ -13,7 +13,7 @@ React offers a component-based architecture and unidirectional data flow. UI ele
 ### Tailwind
 TailwindCSS made styling the web app incredibly efficient by eliminating the need for custom css classes and files. This also helped with code organization.
 ### Firebase
-Firebase was used to handle user authentication due to its simplicity and security. All passwords were stored on Google's Firebase servers, rather than the app's PostgreSQL database.
+Firebase was used to handle user authentication due to its simplicity and security. All passwords were stored on Google's Firebase servers, rather than the app's PostgreSQL database. Firebase also made handling access tokens and refresh tokens easy.
 ### GraphQL
 GraphQL, opposed to REST, allowed for efficient full-stack development by offering a consistent and reliable API. The frontend could define its own requests based on its needs, whether it was for user or note information.
 ### NestJS
